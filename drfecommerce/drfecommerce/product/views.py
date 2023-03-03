@@ -31,3 +31,15 @@ class BrandViewSet(viewsets.ViewSet):
     def list(self, request):
         serializer = BrandSerializer(self.queryset, many=True)
         return Response(serializer.data)
+
+@extend_schema(responses=ProductSerializer)
+class ProductViewSet(viewsets.ViewSet):
+    """
+    A simple viewset for viewing all products
+    """
+
+    queryset = Product.objects.all()
+
+    def list(self, request):
+        serializer = ProductSerializer(self.queryset, many=True)
+        return Response(serializer.data)
