@@ -7,6 +7,7 @@ from drfecommerce.product import views
 
 router = DefaultRouter()
 router.register(r"category",views.CategoryViewSet)
+router.register(r"category",views.BrandViewSet)
 
 
 urlpatterns = [
